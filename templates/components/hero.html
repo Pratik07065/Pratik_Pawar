@@ -1,0 +1,78 @@
+<section id="home" class="hero-section">
+  <div class="container hero-grid">
+    <div class="hero-content">
+      <div class="hero-badge">
+        <span class="pulse-dot"></span>
+        {{ personal_info.hero_badge|default:"Available for AI/ML & Engineering Roles" }}
+      </div>
+
+      <div class="hero-greeting">{{ personal_info.hero_heading|default:"HELLO, I'M PRATIK" }}</div>
+      
+      <h1 class="hero-name">{{ personal_info.name|default:"PRATIK KAUTIK PAWAR" }}</h1>
+
+      <div class="hero-roles">
+        <span>AI/ML Engineer</span> • <span>GenAI Engineer</span> • <span>Python Developer</span>
+      </div>
+
+      <p class="hero-description">
+        {{ personal_info.hero_description|default:"Building intelligent, data-driven and full-stack applications with Machine Learning, Generative AI and Python." }}
+      </p>
+
+      <div class="hero-actions">
+        <a href="#projects" class="btn btn-primary">
+          <i data-lucide="eye"></i> View My Work
+        </a>
+
+        {% if personal_info.resume_file %}
+          <a href="{% url 'portfolio:resume' %}" target="_blank" class="btn btn-outline">
+            <i data-lucide="download"></i> Download Resume
+          </a>
+        {% endif %}
+
+        {% if personal_info.github_url %}
+          <a href="{{ personal_info.github_url }}" target="_blank" rel="noopener" class="btn btn-outline" style="padding: 12px 18px;" title="GitHub Profile">
+            <i data-lucide="github"></i>
+          </a>
+        {% endif %}
+
+        {% if personal_info.linkedin_url %}
+          <a href="{{ personal_info.linkedin_url }}" target="_blank" rel="noopener" class="btn btn-outline" style="padding: 12px 18px;" title="LinkedIn Profile">
+            <i data-lucide="linkedin"></i>
+          </a>
+        {% endif %}
+      </div>
+    </div>
+
+    <div class="hero-visual">
+      <div class="avatar-wrapper">
+        <div class="avatar-inner">
+          {% if personal_info.profile_image %}
+            <img src="{{ personal_info.profile_image.url }}" alt="{{ personal_info.name }}" style="width: 100%; height: 100%; object-fit: cover;">
+          {% else %}
+            <div class="avatar-placeholder">
+              <i data-lucide="bot" style="width: 80px; height: 80px;"></i>
+              <span style="font-weight: 700; font-family: var(--font-heading); font-size: 1.2rem;">AI / ML ENGINEER</span>
+            </div>
+          {% endif %}
+        </div>
+      </div>
+
+      <!-- Floating Feature Badges -->
+      <div class="floating-badge fb-1">
+        <i data-lucide="brain-circuit" style="color: var(--accent-secondary);"></i>
+        <div>
+          <div style="font-size: 0.85rem; font-weight: 700;">Machine Learning</div>
+          <div style="font-size: 0.75rem; color: var(--text-muted);">93% Model Accuracy</div>
+        </div>
+      </div>
+
+      <div class="floating-badge fb-2">
+        <i data-lucide="sparkles" style="color: var(--accent-primary);"></i>
+        <div>
+          <div style="font-size: 0.85rem; font-weight: 700;">Generative AI</div>
+          <div style="font-size: 0.75rem; color: var(--text-muted);">LLMs & Prompt Eng.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,31 @@
+<section id="achievements" class="section-padding section-reveal">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-badge">Key Highlights</span>
+      <h2 class="section-title">Milestones & <span class="gradient-text">Achievements</span></h2>
+      <p class="section-subtitle">Demonstrated results in machine learning benchmarks and professional development.</p>
+    </div>
+
+    <div class="achievements-grid">
+      {% for ach in achievements %}
+        <div class="glass-card achievement-card">
+          <div style="width: 50px; height: 50px; border-radius: var(--radius-md); background: rgba(124, 92, 255, 0.12); color: var(--accent-secondary); display: flex; align-items: center; justify-content: center; margin: 0 auto 16px auto;">
+            <i data-lucide="{{ ach.icon|default:'trophy' }}"></i>
+          </div>
+
+          {% if ach.value %}
+            <div class="achievement-value count-up" data-count="{{ ach.value }}">{{ ach.value }}</div>
+          {% endif %}
+
+          <h3 style="font-size: 1.2rem; margin-bottom: 8px;">{{ ach.title }}</h3>
+          
+          {% if ach.description %}
+            <p style="color: var(--text-muted); font-size: 0.9rem;">
+              {{ ach.description }}
+            </p>
+          {% endif %}
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>

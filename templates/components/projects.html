@@ -1,0 +1,67 @@
+<section id="projects" class="section-padding section-reveal">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-badge">Featured Work</span>
+      <h2 class="section-title">Projects & <span class="gradient-text">Case Studies</span></h2>
+      <p class="section-subtitle">Intelligent systems, web applications, and predictive AI/ML models built with precision.</p>
+    </div>
+
+    <div class="projects-grid">
+      {% for project in projects %}
+        <div class="glass-card project-card">
+          <div class="project-media">
+            {% if project.project_image %}
+              <img src="{{ project.project_image.url }}" alt="{{ project.title }}" style="width: 100%; height: 100%; object-fit: cover;">
+            {% else %}
+              <div class="project-media-placeholder">
+                <i data-lucide="layers" style="width: 50px; height: 50px;"></i>
+                <span style="font-weight: 700; font-family: var(--font-heading); font-size: 0.9rem;">{{ project.category }}</span>
+              </div>
+            {% endif %}
+            <span class="project-category-badge">{{ project.category }}</span>
+          </div>
+
+          <h3 class="project-title">{{ project.title }}</h3>
+          <p class="project-desc">{{ project.short_description }}</p>
+
+          <div class="project-tech-tags">
+            {% for tech in project.technologies.all %}
+              <span class="tech-tag">{{ tech.name }}</span>
+            {% endfor %}
+          </div>
+
+          {% if project.statistics.all %}
+            <div class="project-stats-row">
+              {% for stat in project.statistics.all %}
+                <div>
+                  <div class="p-stat-val">{{ stat.value }}</div>
+                  <div class="p-stat-lbl">{{ stat.label }}</div>
+                </div>
+              {% endfor %}
+            </div>
+          {% endif %}
+
+          <div class="project-links">
+            <button class="btn btn-primary btn-sm view-project-btn" data-slug="{{ project.slug }}">
+              <i data-lucide="eye"></i> View Details
+            </button>
+
+            <div style="display: flex; gap: 8px;">
+              {% if project.github_url %}
+                <a href="{{ project.github_url }}" target="_blank" rel="noopener" class="btn btn-outline btn-sm" title="GitHub Repository">
+                  <i data-lucide="github"></i>
+                </a>
+              {% endif %}
+
+              {% if project.live_demo_url %}
+                <a href="{{ project.live_demo_url }}" target="_blank" rel="noopener" class="btn btn-outline btn-sm" title="Live Demo">
+                  <i data-lucide="external-link"></i>
+                </a>
+              {% endif %}
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>

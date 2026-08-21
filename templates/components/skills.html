@@ -1,0 +1,39 @@
+<section id="skills" class="section-padding section-reveal">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-badge">Tech Stack & Expertise</span>
+      <h2 class="section-title">Skills & <span class="gradient-text">Competencies</span></h2>
+      <p class="section-subtitle">Categorized technology stack spanning artificial intelligence, backend engineering, and web development.</p>
+    </div>
+
+    <!-- Category Filter Tabs -->
+    <div class="skills-filter">
+      <button class="filter-btn active" data-filter="all">All Skills</button>
+      {% for cat in skill_categories %}
+        <button class="filter-btn" data-filter="{{ cat.name|slugify }}">{{ cat.name }}</button>
+      {% endfor %}
+    </div>
+
+    <!-- Skills Grid -->
+    <div class="skills-grid">
+      {% for cat in skill_categories %}
+        {% for skill in cat.active_skills %}
+          <div class="glass-card skill-card" data-category="{{ cat.name|slugify }}">
+            <div class="skill-icon-wrapper">
+              <i data-lucide="{{ skill.icon|default:'cpu' }}"></i>
+            </div>
+            <div>
+              <div style="font-weight: 700; font-size: 1.05rem; display: flex; align-items: center; gap: 8px;">
+                {{ skill.name }}
+                {% if skill.is_featured %}
+                  <span style="font-size: 0.7rem; padding: 2px 6px; border-radius: var(--radius-full); background: rgba(0, 212, 255, 0.15); color: var(--accent-secondary);">Core</span>
+                {% endif %}
+              </div>
+              <div style="font-size: 0.8rem; color: var(--text-muted); margin-top: 2px;">{{ skill.description|default:cat.name }}</div>
+            </div>
+          </div>
+        {% endfor %}
+      {% endfor %}
+    </div>
+  </div>
+</section>

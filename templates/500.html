@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block title %}500 - Server Error | Pratik Pawar Portfolio{% endblock %}
+
+{% block content %}
+<section class="section-padding" style="min-height: 80vh; display: flex; align-items: center; justify-content: center; padding-top: 140px;">
+  <div class="container" style="max-width: 600px; text-align: center;">
+    <div class="glass-card" style="padding: 60px 40px;">
+      <div style="font-size: 5rem; font-weight: 800; font-family: var(--font-heading); background: var(--accent-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 10px;">
+        500
+      </div>
+      <h1 style="font-size: 1.8rem; margin-bottom: 16px;">Internal Server Error</h1>
+      <p style="color: var(--text-muted); margin-bottom: 30px;">
+        An unexpected error occurred while processing your request. Please try again later or return to home.
+      </p>
+      <a href="{% url 'portfolio:home' %}" class="btn btn-primary">
+        <i data-lucide="home"></i> Return to Portfolio Home
+      </a>
+    </div>
+  </div>
+</section>
+{% endblock %}

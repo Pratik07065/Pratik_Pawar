@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block title %}Resume | Pratik Kautik Pawar{% endblock %}
+
+{% block content %}
+<section class="section-padding" style="padding-top: 140px;">
+  <div class="container" style="max-width: 800px;">
+    <div class="glass-card" style="text-align: center; padding: 60px 40px;">
+      <i data-lucide="file-text" style="width: 60px; height: 60px; color: var(--accent-secondary); margin-bottom: 20px;"></i>
+      <h1 style="font-size: 2.2rem; margin-bottom: 16px;">Curriculum Vitae</h1>
+      <p style="color: var(--text-muted); max-width: 600px; margin: 0 auto 30px auto;">
+        Resume file managed via Django Admin. You can upload or replace the PDF resume file at any time from the Django Admin interface.
+      </p>
+
+      {% if personal_info.resume_file %}
+        <div style="display: flex; justify-content: center; gap: 16px; flex-wrap: wrap;">
+          <a href="{{ personal_info.resume_file.url }}" download class="btn btn-primary">
+            <i data-lucide="download"></i> Download Resume PDF
+          </a>
+          <a href="{{ personal_info.resume_file.url }}" target="_blank" class="btn btn-outline">
+            <i data-lucide="external-link"></i> View PDF in Browser
+          </a>
+        </div>
+      {% else %}
+        <div style="padding: 20px; background: rgba(255, 255, 255, 0.04); border-radius: var(--radius-md); margin-bottom: 30px; color: var(--text-muted);">
+          No physical resume PDF uploaded yet in Django Admin.
+        </div>
+        <a href="mailto:{{ personal_info.email }}" class="btn btn-primary">
+          <i data-lucide="mail"></i> Contact Pratik directly for Resume
+        </a>
+      {% endif %}
+    </div>
+  </div>
+</section>
+{% endblock %}

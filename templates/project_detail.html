@@ -1,0 +1,88 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ project.title }} | Pratik Pawar Portfolio{% endblock %}
+
+{% block content %}
+<section class="section-padding" style="padding-top: 140px;">
+  <div class="container" style="max-width: 900px;">
+    <a href="{% url 'portfolio:home' %}#projects" class="btn btn-outline btn-sm" style="margin-bottom: 30px;">
+      <i data-lucide="arrow-left"></i> Back to All Projects
+    </a>
+
+    <div class="glass-card" style="padding: 40px;">
+      <span class="section-badge">{{ project.category }}</span>
+      <h1 style="font-size: 2.5rem; margin-top: 10px; margin-bottom: 20px;">{{ project.title }}</h1>
+
+      <div class="project-tech-tags" style="margin-bottom: 30px;">
+        {% for tech in project.technologies.all %}
+          <span class="tech-tag">{{ tech.name }}</span>
+        {% endfor %}
+      </div>
+
+      {% if project.statistics.all %}
+        <div class="project-stats-row" style="margin-bottom: 40px;">
+          {% for stat in project.statistics.all %}
+            <div>
+              <div class="p-stat-val" style="font-size: 1.4rem;">{{ stat.value }}</div>
+              <div class="p-stat-lbl">{{ stat.label }}</div>
+            </div>
+          {% endfor %}
+        </div>
+      {% endif %}
+
+      <div style="margin-bottom: 30px;">
+        <h3 style="font-size: 1.3rem; margin-bottom: 12px; color: var(--accent-secondary);">Overview & Architecture</h3>
+        <p style="color: var(--text-muted); line-height: 1.8;">
+          {{ project.detailed_description|default:project.short_description }}
+        </p>
+      </div>
+
+      {% if project.problem_statement %}
+        <div style="margin-bottom: 30px;">
+          <h3 style="font-size: 1.3rem; margin-bottom: 12px; color: var(--accent-primary);">Problem Addressed</h3>
+          <p style="color: var(--text-muted); line-height: 1.8;">
+            {{ project.problem_statement }}
+          </p>
+        </div>
+      {% endif %}
+
+      {% if project.solution_statement %}
+        <div style="margin-bottom: 30px;">
+          <h3 style="font-size: 1.3rem; margin-bottom: 12px; color: var(--accent-secondary);">The Solution</h3>
+          <p style="color: var(--text-muted); line-height: 1.8;">
+            {{ project.solution_statement }}
+          </p>
+        </div>
+      {% endif %}
+
+      {% if project.features.all %}
+        <div style="margin-bottom: 30px;">
+          <h3 style="font-size: 1.3rem; margin-bottom: 16px; color: var(--accent-secondary);">Key Features & Modules</h3>
+          <ul style="list-style: none; padding-left: 0;">
+            {% for feat in project.features.all %}
+              <li style="margin-bottom: 12px; color: var(--text-muted); display: flex; align-items: flex-start; gap: 10px;">
+                <span style="color: var(--accent-secondary); font-weight: 700;">✓</span>
+                <span>{{ feat.feature }}</span>
+              </li>
+            {% endfor %}
+          </ul>
+        </div>
+      {% endif %}
+
+      <div style="display: flex; gap: 16px; margin-top: 40px; flex-wrap: wrap;">
+        {% if project.github_url %}
+          <a href="{{ project.github_url }}" target="_blank" rel="noopener" class="btn btn-outline">
+            <i data-lucide="github"></i> View GitHub Repository
+          </a>
+        {% endif %}
+
+        {% if project.live_demo_url %}
+          <a href="{{ project.live_demo_url }}" target="_blank" rel="noopener" class="btn btn-primary">
+            <i data-lucide="external-link"></i> Open Live Demo
+          </a>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}

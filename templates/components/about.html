@@ -1,0 +1,81 @@
+<section id="about" class="section-padding section-reveal">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-badge">About Me</span>
+      <h2 class="section-title">Driven by Curiosity & <span class="gradient-text">Intelligent Code</span></h2>
+      <p class="section-subtitle">Combining Computer Engineering fundamentals with modern Artificial Intelligence and web engineering.</p>
+    </div>
+
+    <div class="about-grid">
+      <div class="glass-card">
+        <h3 style="font-size: 1.6rem; margin-bottom: 16px; color: var(--accent-secondary);">Who I Am</h3>
+        <p style="color: var(--text-muted); line-height: 1.8; margin-bottom: 20px;">
+          {{ personal_info.about_text }}
+        </p>
+
+        <div style="display: flex; gap: 16px; margin-top: 30px; flex-wrap: wrap;">
+          <div style="padding: 12px 20px; background: rgba(124, 92, 255, 0.08); border: 1px solid rgba(124, 92, 255, 0.2); border-radius: var(--radius-md);">
+            <div style="font-size: 1.5rem; font-weight: 800; color: var(--accent-secondary);">8.65</div>
+            <div style="font-size: 0.8rem; color: var(--text-muted);">BE CGPA</div>
+          </div>
+
+          <div style="padding: 12px 20px; background: rgba(0, 212, 255, 0.08); border: 1px solid rgba(0, 212, 255, 0.2); border-radius: var(--radius-md);">
+            <div style="font-size: 1.5rem; font-weight: 800; color: var(--accent-primary);">2026</div>
+            <div style="font-size: 0.8rem; color: var(--text-muted);">Graduation Year</div>
+          </div>
+
+          <div style="padding: 12px 20px; background: rgba(255, 255, 255, 0.04); border: 1px solid var(--border-subtle); border-radius: var(--radius-md);">
+            <div style="font-size: 1.5rem; font-weight: 800; color: var(--text-main);">3+</div>
+            <div style="font-size: 0.8rem; color: var(--text-muted);">Major AI Projects</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="glass-card">
+        <h3 style="font-size: 1.6rem; margin-bottom: 20px;">Quick Information</h3>
+        
+        <div class="about-info-box">
+          <div class="info-item">
+            <div class="info-icon"><i data-lucide="user"></i></div>
+            <div>
+              <div style="font-size: 0.8rem; color: var(--text-muted);">Full Name</div>
+              <div style="font-weight: 600;">{{ personal_info.name }}</div>
+            </div>
+          </div>
+
+          <div class="info-item">
+            <div class="info-icon"><i data-lucide="map-pin"></i></div>
+            <div>
+              <div style="font-size: 0.8rem; color: var(--text-muted);">Location</div>
+              <div style="font-weight: 600;">{{ personal_info.location }}</div>
+            </div>
+          </div>
+
+          <div class="info-item">
+            <div class="info-icon"><i data-lucide="mail"></i></div>
+            <div>
+              <div style="font-size: 0.8rem; color: var(--text-muted);">Email</div>
+              <div style="font-weight: 600; font-size: 0.9rem;"><a href="mailto:{{ personal_info.email }}">{{ personal_info.email }}</a></div>
+            </div>
+          </div>
+
+          <div class="info-item">
+            <div class="info-icon"><i data-lucide="phone"></i></div>
+            <div>
+              <div style="font-size: 0.8rem; color: var(--text-muted);">Phone</div>
+              <div style="font-weight: 600; font-size: 0.9rem;"><a href="tel:{{ personal_info.phone }}">{{ personal_info.phone }}</a></div>
+            </div>
+          </div>
+
+          <div class="info-item" style="grid-column: 1 / -1;">
+            <div class="info-icon"><i data-lucide="graduation-cap"></i></div>
+            <div>
+              <div style="font-size: 0.8rem; color: var(--text-muted);">Education</div>
+              <div style="font-weight: 600;">B.E. Computer Engineering (SPPU)</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

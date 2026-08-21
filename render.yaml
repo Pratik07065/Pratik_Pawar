@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: pratik-pawar-portfolio
+    env: python
+    buildCommand: "./build.sh"
+    startCommand: "gunicorn pratikpawar.wsgi:application"
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.9
+      - key: SECRET_KEY
+        generateValue: true
+      - key: DEBUG
+        value: "False"

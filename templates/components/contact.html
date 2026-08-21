@@ -1,0 +1,70 @@
+<section id="contact" class="section-padding section-reveal">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-badge">Get In Touch</span>
+      <h2 class="section-title">{{ personal_info.contact_heading|default:"Let's Build Something Intelligent." }}</h2>
+      <p class="section-subtitle">{{ personal_info.contact_description }}</p>
+    </div>
+
+    <div class="contact-wrapper">
+      <div>
+        <a href="mailto:{{ personal_info.email }}" class="glass-card contact-card">
+          <div class="contact-card-icon">
+            <i data-lucide="mail"></i>
+          </div>
+          <div>
+            <div style="font-size: 0.85rem; color: var(--text-muted);">Direct Email</div>
+            <div style="font-size: 1.1rem; font-weight: 700;">{{ personal_info.email }}</div>
+          </div>
+        </a>
+
+        <a href="tel:{{ personal_info.phone }}" class="glass-card contact-card">
+          <div class="contact-card-icon" style="background: var(--accent-gradient);">
+            <i data-lucide="phone"></i>
+          </div>
+          <div>
+            <div style="font-size: 0.85rem; color: var(--text-muted);">Phone / WhatsApp</div>
+            <div style="font-size: 1.1rem; font-weight: 700;">{{ personal_info.phone }}</div>
+          </div>
+        </a>
+
+        <div class="glass-card contact-card">
+          <div class="contact-card-icon" style="background: rgba(124, 92, 255, 0.2); color: var(--accent-secondary);">
+            <i data-lucide="map-pin"></i>
+          </div>
+          <div>
+            <div style="font-size: 0.85rem; color: var(--text-muted);">Location</div>
+            <div style="font-size: 1.1rem; font-weight: 700;">{{ personal_info.location }}</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="glass-card" style="display: flex; flex-direction: column; justify-content: center; text-align: center; padding: 40px;">
+        <i data-lucide="send" style="width: 50px; height: 50px; color: var(--accent-secondary); margin: 0 auto 20px auto;"></i>
+        <h3 style="font-size: 1.6rem; margin-bottom: 12px;">Connect Across Platforms</h3>
+        <p style="color: var(--text-muted); margin-bottom: 30px;">
+          Feel free to reach out directly via email, phone, or connect on social platforms.
+        </p>
+
+        <div style="display: flex; justify-content: center; gap: 16px; flex-wrap: wrap;">
+          <a href="mailto:{{ personal_info.email }}" class="btn btn-primary">
+            <i data-lucide="mail"></i> Send Email
+          </a>
+          <a href="tel:{{ personal_info.phone }}" class="btn btn-outline">
+            <i data-lucide="phone"></i> Call Now
+          </a>
+          {% if personal_info.github_url %}
+            <a href="{{ personal_info.github_url }}" target="_blank" rel="noopener" class="btn btn-outline" title="GitHub">
+              <i data-lucide="github"></i> GitHub
+            </a>
+          {% endif %}
+          {% if personal_info.linkedin_url %}
+            <a href="{{ personal_info.linkedin_url }}" target="_blank" rel="noopener" class="btn btn-outline" title="LinkedIn">
+              <i data-lucide="linkedin"></i> LinkedIn
+            </a>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

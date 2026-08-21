@@ -1,0 +1,26 @@
+<section id="resume" class="section-padding section-reveal">
+  <div class="container">
+    <div class="glass-card" style="text-align: center; padding: 60px 40px; background: linear-gradient(135deg, rgba(13, 17, 28, 0.9), rgba(124, 92, 255, 0.1)); border: 1px solid rgba(124, 92, 255, 0.3);">
+      <span class="section-badge"><i data-lucide="file-text"></i> Curriculum Vitae</span>
+      <h2 style="font-size: 2.4rem; margin-top: 10px; margin-bottom: 16px;">Interested in My Complete <span class="gradient-text">Qualifications?</span></h2>
+      <p style="color: var(--text-muted); max-width: 600px; margin: 0 auto 30px auto; font-size: 1.05rem;">
+        Download or preview my latest resume managed directly through Django Admin.
+      </p>
+
+      <div style="display: flex; justify-content: center; gap: 16px; flex-wrap: wrap;">
+        {% if personal_info.resume_file %}
+          <a href="{% url 'portfolio:resume' %}" target="_blank" class="btn btn-primary">
+            <i data-lucide="download"></i> Download Resume
+          </a>
+          <a href="{{ personal_info.resume_file.url }}" target="_blank" class="btn btn-outline">
+            <i data-lucide="eye"></i> View Resume PDF
+          </a>
+        {% else %}
+          <a href="mailto:{{ personal_info.email }}" class="btn btn-primary">
+            <i data-lucide="mail"></i> Request Resume via Email
+          </a>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</section>
