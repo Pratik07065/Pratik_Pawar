@@ -20,7 +20,13 @@
               {{ exp.description }}
             </p>
 
-            {% if exp.technologies %}
+            {% if exp.get_technologies_list %}
+              <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+                {% for tech in exp.get_technologies_list %}
+                  <span class="tech-tag">{{ tech }}</span>
+                {% endfor %}
+              </div>
+            {% elif exp.technologies %}
               <div style="display: flex; flex-wrap: wrap; gap: 8px;">
                 {% for tech in exp.technologies.split %}
                   <span class="tech-tag">{{ tech|cut:"," }}</span>

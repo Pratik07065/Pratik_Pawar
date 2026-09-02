@@ -217,6 +217,11 @@ class Experience(models.Model):
     def __str__(self):
         return f"{self.job_title} at {self.company}"
 
+    def get_technologies_list(self):
+        if not self.technologies:
+            return []
+        return [t.strip() for t in self.technologies.split(',') if t.strip()]
+
 
 class Education(models.Model):
     degree = models.CharField(max_length=200)

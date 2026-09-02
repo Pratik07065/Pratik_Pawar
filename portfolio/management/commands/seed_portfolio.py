@@ -195,12 +195,12 @@ class Command(BaseCommand):
                 "statistics": [("Verification Speed", "< 50ms"), ("Record Security", "Sanitized"), ("UI Responsiveness", "100%")]
             },
             {
-                "title": "Parakeet AI – Real-Time Interview Assistant",
-                "slug": "parakeet-ai-real-time-interview-assistant",
+                "title": "Real-Time Interview Assistant",
+                "slug": "Real-time-interview-assistant",
                 "aliases": [
-                    "Parakeet AI", "Parakeet", "Parakeet project", "AI Interview Assistant",
+                    "Interview AI", "AI Interview Assistant",
                     "Interview Support AI", "Real-time AI Interview Assistant", "Natively",
-                    "Natively v2.8.5", "GitParakeet project", "Desktop AI meeting copilot"
+                    "Natively v2.8.5", "Desktop AI meeting copilot"
                 ],
                 "category": "AI + Desktop / Real-time",
                 "short_description": "A desktop AI interview and meeting assistant offering real-time question detection, speech-to-text integration with Whisper and LLM response generation.",
@@ -338,6 +338,19 @@ class Command(BaseCommand):
                 "description": "Worked on practical assignments and projects involving Python, OOP, SQL, Machine Learning, data analysis, visualization and model development.",
                 "technologies": "Python, SQL, NumPy, Pandas, Matplotlib, Scikit-Learn, Power BI, Jupyter Notebook, Google Colab, GitHub, Postman, VS Code",
                 "display_order": 1,
+                "is_active": True
+            }
+        )
+        Experience.objects.update_or_create(
+            job_title="Python Developer",
+            company="BluJay Technologies",
+            defaults={
+                "location": "Hyderabad, Telangana, India",
+                "start_date": "July 2026",
+                "end_date": "Present",
+                "description": "Working as a Python Developer Intern on AI-powered chatbot development. Gaining hands-on experience in Python, Generative AI, Prompt Engineering, API integration and backend development. Building and improving real-world conversational AI features and working with modern AI application development workflows.",
+                "technologies": "Python, Generative AI, Prompt Engineering, API Integration, Backend Development, AI Chatbots, REST APIs, LangChain, RAG, GitHub, VS Code",
+                "display_order": 2,
                 "is_active": True
             }
         )
