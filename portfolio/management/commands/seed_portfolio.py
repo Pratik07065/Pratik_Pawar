@@ -214,7 +214,59 @@ class Command(BaseCommand):
                 "technologies": ["Python", "FastAPI", "Uvicorn", "Electron", "JavaScript", "HTML", "CSS", "Web Audio API", "MediaRecorder", "Whisper", "Groq", "LLM", "Speech-to-Text"],
                 "features": ["Real-time AI interview support", "Speech-to-Text integration via Whisper", "Real-time question detection & context extraction", "Discrete desktop screen overlay panel", "High-speed LLM inference powered by Groq"],
                 "statistics": [("Audio Engine", "Real-time"), ("Speech-to-Text", "Whisper"), ("Inference Latency", "Low-latency")]
-            }
+            },
+            {
+                "title": "Document Q&A Chatbot",
+                "slug": "Document-QA-Chatbot",
+                "aliases": [
+                    "Document Q&A",
+                    "Document Question Answering Chatbot",
+                    "PDF Question Answering",
+                    "RAG Chatbot",
+                    "AI Document Assistant",
+                    "Document-Based AI Chatbot",
+                    "LangChain Document Chatbot"
+                ],
+                "category": "AI + Generative AI / RAG",
+                "short_description": "An AI-powered document question-answering chatbot that enables users to ask natural-language questions about uploaded documents and receive context-aware answers using Retrieval-Augmented Generation (RAG).",
+                "detailed_description": "Developed a document-based question-answering system using Python, Streamlit, LangChain, Google Gemini, FAISS, and Sentence Transformers. The application processes documents, splits text into manageable chunks, generates vector embeddings, and stores them for semantic similarity search. When a user asks a question, the system retrieves relevant document chunks and supplies them as context to the Gemini LLM to generate relevant, context-aware answers grounded in the document content.",
+                "problem_statement": "Finding specific information in lengthy PDF and DOCX documents is time-consuming. Traditional keyword searches often fail to understand natural-language questions or identify contextually relevant information across documents.",
+                "solution_statement": "Built a Retrieval-Augmented Generation (RAG) chatbot that combines semantic search with LLM-based answer generation, allowing users to retrieve relevant information from documents and ask questions in natural language.",
+                "github_url": "",
+                "live_demo_url": "",
+                "featured": True,
+                "display_order": 5,
+                "technologies": [
+                    "Python",
+                    "Streamlit",
+                    "LangChain",
+                    "Google Gemini",
+                    "LLM",
+                    "Retrieval-Augmented Generation (RAG)",
+                    "FAISS",
+                    "Sentence Transformers",
+                    "Text Embeddings",
+                    "Vector Search",
+                    "PDF Processing",
+                    "DOCX Processing"
+                ],
+                "features": [
+                    "Document-based question answering",
+                    "PDF and DOCX document processing",
+                    "Automatic text extraction and chunking",
+                    "Semantic search using vector embeddings",
+                    "FAISS vector similarity search",
+                    "Context-aware answer generation using Google Gemini",
+                    "Retrieval-Augmented Generation (RAG) pipeline",
+                    "Natural-language question answering"
+                ],
+                "statistics": [
+                    ("Architecture", "RAG"),
+                    ("Vector Database", "FAISS"),
+                    ("LLM", "Google Gemini"),
+                    ("Interface", "Streamlit")
+                ]
+            },
         ]
 
         projects_created_count = 0
